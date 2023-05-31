@@ -20,7 +20,7 @@ Route::group(['middleware' => 'auth'], function () {
    Route::get('/email_verification/send', 'EmailVerificationController@send')->name('email_verification.send');
    // start
    Route::group(['middleware' => 'email_verified'], function () {
-
+        Route::get('user_addresses', 'UserAddressesController@index')->name('user_addresses.index');
    });
    // end
 });
