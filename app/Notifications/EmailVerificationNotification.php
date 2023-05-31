@@ -7,7 +7,7 @@ use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Support\Str;
-use Cache;
+use Illuminate\Support\Facades\Cache;
 
 class EmailVerificationNotification extends Notification
 {
