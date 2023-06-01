@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 class ProductsController extends Controller
 {
     /**
+     * 首页
      * @param Request $request
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application|\Illuminate\View\View
      */
@@ -55,6 +56,7 @@ class ProductsController extends Controller
     }
 
     /**
+     * 商品详情页
      * @param Product $product
      * @param Request $request
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application|\Illuminate\View\View
@@ -108,5 +110,11 @@ class ProductsController extends Controller
 
 
         return [];
+    }
+
+    public function favorites(Request $request)
+    {
+        $products = $request->user()->favoriteProducts()->paginate(16);
+        return view('products.favorites', ['products' => $products]);
     }
 }

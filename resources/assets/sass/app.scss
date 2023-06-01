@@ -50,7 +50,7 @@ body {
   }
 }
 
-.products-index-page {
+.products-index-page, .products-favorites-page {
   .pagination {
     margin-right: 5px;
   }
@@ -69,8 +69,7 @@ body {
         .top {
           padding: 5px;
           .img {
-            width: 70px;
-            height: 100px;
+            width: 100%;
           }
           .price {
             margin-top: 5px;
