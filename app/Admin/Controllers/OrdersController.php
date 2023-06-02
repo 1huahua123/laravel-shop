@@ -56,4 +56,13 @@ class OrdersController extends Controller
             });
         });
     }
+
+
+    public function show(Order $order)
+    {
+        return Admin::content(function (Content $content) use ($order) {
+           $content->header('查看订单');
+           $content->body(view('admin.orders.show', ['order' => $order]));
+        });
+    }
 }
