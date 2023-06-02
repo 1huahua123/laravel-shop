@@ -28,7 +28,7 @@ class CreateOrdersTable extends Migration
             $table->string('refund_no')->nullable();
             $table->boolean('closed')->default(false);
             $table->boolean('reviewed')->default(false);
-            $table->string('ship_data')->default(\App\Models\Order::SHIP_STATUS_PENDING);
+            $table->string('ship_status')->default(\App\Models\Order::SHIP_STATUS_PENDING);
             $table->text('extra')->nullable();
             $table->timestamps();
         });
